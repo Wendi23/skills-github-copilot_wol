@@ -21,22 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const spotsLeft = details.max_participants - details.participants.length;
         const participantsList = details.participants.length > 0
-          ? details.participants.map((participant) => `
-              <li>
-                <span class="participant-name">${participant}</span>
-                <button
-                  type="button"
-                  class="delete-participant"
-                  data-activity="${name}"
-                  data-email="${participant}"
-                  aria-label="Remove participant"
-                >
-                  ✕
-                </button>
-              </li>`).join("")
-          : '<li><em>No participants yet</em></li>';
-
-        const participantsList = details.participants.length > 0
           ? details.participants.map(p => `<li><span class="participant-name">${p}</span><button class="delete-participant" data-activity="${name}" data-email="${p}" title="Remove participant">✕</button></li>`).join('')
           : '<li><em>No participants yet</em></li>';
 
